@@ -1,0 +1,42 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/Applets.css",
+    "inputFile": "wwwroot/css/Applets.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Controls.css",
+    "inputFile": "wwwroot/css/Controls.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Calendar.css",
+    "inputFile": "wwwroot/css/Calendar.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Picklist.css",
+    "inputFile": "wwwroot/css/Picklist.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Navbar.css",
+    "inputFile": "wwwroot/css/Navbar.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Tabs.css",
+    "inputFile": "wwwroot/css/Tabs.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Fonts.css",
+    "inputFile": "wwwroot/css/Fonts.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Modal.css",
+    "inputFile": "wwwroot/css/Modal.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Divider.css",
+    "inputFile": "wwwroot/css/Divider.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Mask.css",
+    "inputFile": "wwwroot/css/Mask.scss"
+  }
+]

@@ -1,0 +1,3095 @@
+{
+  "Views View": {
+    "BO": "View",
+    "Url": "/api/Views/",
+    "AppletList": {
+      "View Tile Applet": {
+        "BC": "View",
+        "template": "",
+        "PR": {
+          "name": "DefaultTileAppletPR.js",
+          "payload": {
+
+          }
+        },
+        "columns": [
+          {
+            "name": "recordName",
+            "header": "View name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "busObjectName",
+            "header": "Business object",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-add-outline",
+            "cssClass": "tile-create",
+            "sequence": 0,
+            "payload": {
+              "applet": "Create View Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "AppletConfg",
+            "action": "AppletConfg",
+            "header": "",
+            "icon": "icon-cogs",
+            "cssClass": "tile-confg",
+            "sequence": 1,
+            "payload": {
+              "applet": "",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "EditRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-pencil",
+            "cssClass": "tile-edit",
+            "sequence": 2,
+            "payload": {
+              "applet": "Edit Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "DeleteRecord",
+            "action": "DeleteRecord",
+            "header": "",
+            "icon": "icon-bin",
+            "cssClass": "tile-delete",
+            "sequence": 3,
+            "payload": {
+              "confirmation": "N"
+            }
+          },
+          {
+            "name": "NextRecords",
+            "action": "NextRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-right",
+            "cssClass": "next-nav",
+            "sequence": 4,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "PreviousRecords",
+            "action": "PreviousRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-left",
+            "cssClass": "previous-nav",
+            "sequence": 5,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "View",
+          "type": "tile",
+          "handling": "default",
+          "header": "Views",
+          "displayLines": "5",
+          "emptyState": "Add view",
+          "path": "/api/View/",
+          "autofocus": true,
+          "autofocusRecord": 0
+        }
+      },
+      "Create View Popup Applet": {
+        "BC": "View",
+        "template": {
+
+        },
+        "PR": {
+          "name": "Col2FieldsActions.js",
+          "payload": {
+          }
+        },
+        "fields": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "busObjectName",
+            "header": "Business object",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "NewRecord",
+            "header": "Create",
+            "cssClass": "def-md-btn label-sm",
+            "sequence": 0,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "Cancel",
+            "action": "Cancel",
+            "header": "Cancel",
+            "cssClass": "shadow-md-btn label-sm",
+            "sequence": 2,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "View",
+          "type": "popup",
+          "handling": "default",
+          "header": "View",
+          "path": "/api/View/",
+          "fieldsHeader": "Fill in the data",
+          "controlsHeader": "Views"
+        }
+      },
+      "View Item Tile Applet": {
+        "BC": "ViewItem",
+        "template": "",
+        "PR": {
+          "name": "DefaultTileAppletPR.js",
+          "payload": {
+
+          }
+        },
+        "columns": [
+          {
+            "name": "recordName",
+            "header": "Item name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "appletName",
+            "header": "Applet name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-add-outline",
+            "cssClass": "tile-create",
+            "sequence": 0,
+            "payload": {
+              "applet": "Create View Item Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "AppletConfg",
+            "action": "AppletConfg",
+            "header": "",
+            "icon": "icon-cogs",
+            "cssClass": "tile-confg",
+            "sequence": 1,
+            "payload": {
+              "applet": "",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "EditRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-pencil",
+            "cssClass": "tile-edit",
+            "sequence": 2,
+            "payload": {
+              "applet": "Edit Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "DeleteRecord",
+            "action": "DeleteRecord",
+            "header": "",
+            "icon": "icon-bin",
+            "cssClass": "tile-delete",
+            "sequence": 3,
+            "payload": {
+              "confirmation": "N"
+            }
+          },
+          {
+            "name": "NextRecords",
+            "action": "NextRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-right",
+            "cssClass": "next-nav",
+            "sequence": 4,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "PreviousRecords",
+            "action": "PreviousRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-left",
+            "cssClass": "previous-nav",
+            "sequence": 5,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "ViewItem",
+          "type": "tile",
+          "handling": "default",
+          "header": "View items",
+          "displayLines": "5",
+          "emptyState": "Add view item",
+          "path": "/api/ViewItem/"
+        }
+      },
+      "Create View Item Popup Applet": {
+        "BC": "ViewItem",
+        "template": {
+
+        },
+        "PR": {
+          "name": "Col2FieldsActions.js",
+          "payload": {
+          }
+        },
+        "fields": [
+          {
+            "name": "recordName",
+            "header": "Item name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "viewName",
+            "header": "View name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "appletName",
+            "header": "Applet name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "NewRecord",
+            "header": "Create",
+            "cssClass": "def-md-btn label-sm",
+            "sequence": 0,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "Cancel",
+            "action": "Cancel",
+            "header": "Cancel",
+            "cssClass": "shadow-md-btn label-sm",
+            "sequence": 2,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "ViewItem",
+          "type": "popup",
+          "handling": "default",
+          "header": "View item",
+          "path": "/api/ViewItem/",
+          "fieldsHeader": "Fill in the data",
+          "controlsHeader": "Actions"
+        }
+      }
+    }
+  },
+  "Applet View": {
+    "BO": "Applet",
+    "Url": "/api/Applet/",
+    "AppletList": {
+      "Applet Tile Applet": {
+        "BC": "Applet",
+        "template": "",
+        "PR": {
+          "name": "DefaultTileAppletPR.js",
+          "payload": {
+
+          }
+        },
+        "columns": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "header",
+            "header": "Applet header",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "busCompName",
+            "header": "Business component name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "type",
+            "header": "Type",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "emptyState",
+            "header": "Empty state",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "physicalRenderName",
+            "header": "Name of physical render",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-add-outline",
+            "cssClass": "tile-create",
+            "sequence": 0,
+            "payload": {
+              "applet": "Create Applet Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "AppletConfg",
+            "action": "AppletConfg",
+            "header": "",
+            "icon": "icon-cogs",
+            "cssClass": "tile-confg",
+            "sequence": 1,
+            "payload": {
+              "applet": "",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "EditRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-pencil",
+            "cssClass": "tile-edit",
+            "sequence": 2,
+            "payload": {
+              "applet": "Edit Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "DeleteRecord",
+            "action": "DeleteRecord",
+            "header": "",
+            "icon": "icon-bin",
+            "cssClass": "tile-delete",
+            "sequence": 3,
+            "payload": {
+              "confirmation": "N"
+            }
+          },
+          {
+            "name": "NextRecords",
+            "action": "NextRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-right",
+            "cssClass": "next-nav",
+            "sequence": 4,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "PreviousRecords",
+            "action": "PreviousRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-left",
+            "cssClass": "previous-nav",
+            "sequence": 5,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "Applet",
+          "type": "tile",
+          "handling": "default",
+          "header": "Applets",
+          "displayLines": "5",
+          "emptyState": "Add Applet",
+          "path": "/api/Applet/"
+        }
+      },
+      "Create Applet Popup Applet": {
+        "BC": "Applet",
+        "template": {
+
+        },
+        "PR": {
+          "name": "Col2FieldsActions.js",
+          "payload": {
+          }
+        },
+        "fields": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "header",
+            "header": "Applet header",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "busCompName",
+            "header": "Business component name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "type",
+            "header": "Type",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "emptyState",
+            "header": "Empty state",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "physicalRenderName",
+            "header": "Name of physical render",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "NewRecord",
+            "header": "Create",
+            "cssClass": "def-md-btn label-sm",
+            "sequence": 0,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "Cancel",
+            "action": "Cancel",
+            "header": "Cancel",
+            "cssClass": "shadow-md-btn label-sm",
+            "sequence": 2,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "Applet",
+          "type": "popup",
+          "handling": "default",
+          "header": "Applet",
+          "path": "/api/Applet/",
+          "fieldsHeader": "Fill in the data",
+          "controlsHeader": "Actions"
+        }
+      },
+      "Column Tile Applet": {
+        "BC": "Column",
+        "template": "",
+        "PR": {
+          "name": "DefaultTileAppletPR.js",
+          "payload": {
+
+          }
+        },
+        "columns": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "header",
+            "header": "Header",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "fieldName",
+            "header": "Field name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-add-outline",
+            "cssClass": "tile-create",
+            "sequence": 0,
+            "payload": {
+              "applet": "Create Column Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "AppletConfg",
+            "action": "AppletConfg",
+            "header": "",
+            "icon": "icon-cogs",
+            "cssClass": "tile-confg",
+            "sequence": 1,
+            "payload": {
+              "applet": "",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "EditRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-pencil",
+            "cssClass": "tile-edit",
+            "sequence": 2,
+            "payload": {
+              "applet": "Edit Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "DeleteRecord",
+            "action": "DeleteRecord",
+            "header": "",
+            "icon": "icon-bin",
+            "cssClass": "tile-delete",
+            "sequence": 3,
+            "payload": {
+              "confirmation": "N"
+            }
+          },
+          {
+            "name": "NextRecords",
+            "action": "NextRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-right",
+            "cssClass": "next-nav",
+            "sequence": 4,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "PreviousRecords",
+            "action": "PreviousRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-left",
+            "cssClass": "previous-nav",
+            "sequence": 5,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "Column",
+          "type": "tile",
+          "handling": "default",
+          "header": "Columns",
+          "displayLines": "5",
+          "emptyState": "Add column",
+          "path": "/api/Column/"
+        }
+      },
+      "Create Column Popup Applet": {
+        "BC": "Column",
+        "template": {
+
+        },
+        "PR": {
+          "name": "Col2FieldsActions.js",
+          "payload": {
+          }
+        },
+        "fields": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "header",
+            "header": "Header",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "fieldName",
+            "header": "Field name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "NewRecord",
+            "header": "Create",
+            "cssClass": "def-md-btn label-sm",
+            "sequence": 0,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "Cancel",
+            "action": "Cancel",
+            "header": "Cancel",
+            "cssClass": "shadow-md-btn label-sm",
+            "sequence": 2,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "Column",
+          "type": "popup",
+          "handling": "default",
+          "header": "Column",
+          "path": "/api/Column/",
+          "fieldsHeader": "Fill in the data",
+          "controlsHeader": "Columns"
+        }
+      },
+      "Control Tile Applet": {
+        "BC": "Control",
+        "template": "",
+        "PR": {
+          "name": "DefaultTileAppletPR.js",
+          "payload": {
+
+          }
+        },
+        "columns": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "type",
+            "header": "Type",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "header",
+            "header": "Header",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "iconName",
+            "header": "Name of icon",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "cssClass",
+            "header": "Css class",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "fieldName",
+            "header": "Field name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "actionName",
+            "header": "Action name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-add-outline",
+            "cssClass": "tile-create",
+            "sequence": 0,
+            "payload": {
+              "applet": "Create Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "AppletConfg",
+            "action": "AppletConfg",
+            "header": "",
+            "icon": "icon-cogs",
+            "cssClass": "tile-confg",
+            "sequence": 1,
+            "payload": {
+              "applet": "",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "EditRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-pencil",
+            "cssClass": "tile-edit",
+            "sequence": 2,
+            "payload": {
+              "applet": "Edit Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "DeleteRecord",
+            "action": "DeleteRecord",
+            "header": "",
+            "icon": "icon-bin",
+            "cssClass": "tile-delete",
+            "sequence": 3,
+            "payload": {
+              "confirmation": "N"
+            }
+          },
+          {
+            "name": "NextRecords",
+            "action": "NextRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-right",
+            "cssClass": "next-nav",
+            "sequence": 4,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "PreviousRecords",
+            "action": "PreviousRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-left",
+            "cssClass": "previous-nav",
+            "sequence": 5,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "Control",
+          "type": "tile",
+          "handling": "default",
+          "header": "Controls",
+          "displayLines": "5",
+          "emptyState": "Add control",
+          "path": "/api/Control/"
+        }
+      },
+      "Create Control Popup Applet": {
+        "BC": "Control",
+        "template": {
+
+        },
+        "PR": {
+          "name": "Col2FieldsActions.js",
+          "payload": {
+          }
+        },
+        "fields": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "type",
+            "header": "Type",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "header",
+            "header": "Header",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "iconName",
+            "header": "Name of icon",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "cssClass",
+            "header": "Css class",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "fieldName",
+            "header": "Field name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "actionName",
+            "header": "Action name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "NewRecord",
+            "header": "Create",
+            "cssClass": "def-md-btn label-sm",
+            "sequence": 0,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "Cancel",
+            "action": "Cancel",
+            "header": "Cancel",
+            "cssClass": "shadow-md-btn label-sm",
+            "sequence": 2,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "Control",
+          "type": "popup",
+          "handling": "default",
+          "header": "Control",
+          "path": "/api/Control/",
+          "fieldsHeader": "Fill in the data",
+          "controlsHeader": "Actions"
+        }
+      },
+      "Control UP Tile Applet": {
+        "BC": "Control UP",
+        "template": "",
+        "PR": {
+          "name": "DefaultTileAppletPR.js",
+          "payload": {
+
+          }
+        },
+        "columns": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "value",
+            "header": "Value",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-add-outline",
+            "cssClass": "tile-create",
+            "sequence": 0,
+            "payload": {
+              "applet": "Create Control UP Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "AppletConfg",
+            "action": "AppletConfg",
+            "header": "",
+            "icon": "icon-cogs",
+            "cssClass": "tile-confg",
+            "sequence": 1,
+            "payload": {
+              "applet": "",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "EditRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-pencil",
+            "cssClass": "tile-edit",
+            "sequence": 2,
+            "payload": {
+              "applet": "Edit Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "DeleteRecord",
+            "action": "DeleteRecord",
+            "header": "",
+            "icon": "icon-bin",
+            "cssClass": "tile-delete",
+            "sequence": 3,
+            "payload": {
+              "confirmation": "N"
+            }
+          },
+          {
+            "name": "NextRecords",
+            "action": "NextRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-right",
+            "cssClass": "next-nav",
+            "sequence": 4,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "PreviousRecords",
+            "action": "PreviousRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-left",
+            "cssClass": "previous-nav",
+            "sequence": 5,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "Control UP",
+          "type": "tile",
+          "handling": "default",
+          "header": "Controls user properties",
+          "displayLines": "5",
+          "emptyState": "Add control user property",
+          "path": "/api/ControlUP/"
+        }
+      },
+      "Create Control UP Popup Applet": {
+        "BC": "Control UP",
+        "template": {
+
+        },
+        "PR": {
+          "name": "Col2FieldsActions.js",
+          "payload": {
+          }
+        },
+        "fields": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "value",
+            "header": "Value",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "NewRecord",
+            "header": "Create",
+            "cssClass": "def-md-btn label-sm",
+            "sequence": 0,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "Cancel",
+            "action": "Cancel",
+            "header": "Cancel",
+            "cssClass": "shadow-md-btn label-sm",
+            "sequence": 2,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "Control UP",
+          "type": "popup",
+          "handling": "default",
+          "header": "Control user propertys",
+          "path": "/api/ControlUP/",
+          "fieldsHeader": "Fill in the data",
+          "controlsHeader": "Actions"
+        }
+      }
+    }
+  },
+  "Link View": {
+    "BO": "Link",
+    "Url": "/api/Link/",
+    "AppletList": {
+      "Link Tile Applet": {
+        "BC": "Link",
+        "template": "",
+        "PR": {
+          "name": "DefaultTileAppletPR.js",
+          "payload": {
+
+          }
+        },
+        "columns": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "parentBCName",
+            "header": "Parent BusComp name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "parentFieldName",
+            "header": "Parent field name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "childBCName",
+            "header": "Child BusComp name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "childFieldName",
+            "header": "Child field name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-add-outline",
+            "cssClass": "tile-create",
+            "sequence": 0,
+            "payload": {
+              "applet": "Create Link Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "AppletConfg",
+            "action": "AppletConfg",
+            "header": "",
+            "icon": "icon-cogs",
+            "cssClass": "tile-confg",
+            "sequence": 1,
+            "payload": {
+              "applet": "",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "EditRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-pencil",
+            "cssClass": "tile-edit",
+            "sequence": 2,
+            "payload": {
+              "applet": "Edit Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "DeleteRecord",
+            "action": "DeleteRecord",
+            "header": "",
+            "icon": "icon-bin",
+            "cssClass": "tile-delete",
+            "sequence": 3,
+            "payload": {
+              "confirmation": "N"
+            }
+          },
+          {
+            "name": "NextRecords",
+            "action": "NextRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-right",
+            "cssClass": "next-nav",
+            "sequence": 4,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "PreviousRecords",
+            "action": "PreviousRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-left",
+            "cssClass": "previous-nav",
+            "sequence": 5,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "Link",
+          "type": "tile",
+          "handling": "default",
+          "header": "Links",
+          "displayLines": "5",
+          "emptyState": "Add link",
+          "path": "/api/Link/"
+        }
+      },
+      "Create Link Popup Applet": {
+        "BC": "Link",
+        "template": {
+
+        },
+        "PR": {
+          "name": "Col2FieldsActions.js",
+          "payload": {
+          }
+        },
+        "fields": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "parentBCName",
+            "header": "Parent BusComp name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "parentFieldName",
+            "header": "Parent field name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "childBCName",
+            "header": "Child BusComp name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "childFieldName",
+            "header": "Child field name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "NewRecord",
+            "header": "Create",
+            "cssClass": "def-md-btn label-sm",
+            "sequence": 0,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "Cancel",
+            "action": "Cancel",
+            "header": "Cancel",
+            "cssClass": "shadow-md-btn label-sm",
+            "sequence": 2,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "Link",
+          "type": "popup",
+          "handling": "default",
+          "header": "Link",
+          "path": "/api/Link/",
+          "fieldsHeader": "Fill in the data",
+          "controlsHeader": "Actions"
+        }
+      }
+    }
+  },
+  "Business Component View": {
+    "BO": "Business Component",
+    "Url": "/api/BusinessComponent/",
+    "AppletList": {
+      "Business Component Tile Applet": {
+        "BC": "Business Component",
+        "template": "",
+        "PR": {
+          "name": "DefaultTileAppletPR.js",
+          "payload": {
+
+          }
+        },
+        "columns": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-add-outline",
+            "cssClass": "tile-create",
+            "sequence": 0,
+            "payload": {
+              "applet": "Create Business Component Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "AppletConfg",
+            "action": "AppletConfg",
+            "header": "",
+            "icon": "icon-cogs",
+            "cssClass": "tile-confg",
+            "sequence": 1,
+            "payload": {
+              "applet": "",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "EditRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-pencil",
+            "cssClass": "tile-edit",
+            "sequence": 2,
+            "payload": {
+              "applet": "Edit Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "DeleteRecord",
+            "action": "DeleteRecord",
+            "header": "",
+            "icon": "icon-bin",
+            "cssClass": "tile-delete",
+            "sequence": 3,
+            "payload": {
+              "confirmation": "N"
+            }
+          },
+          {
+            "name": "NextRecords",
+            "action": "NextRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-right",
+            "cssClass": "next-nav",
+            "sequence": 4,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "PreviousRecords",
+            "action": "PreviousRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-left",
+            "cssClass": "previous-nav",
+            "sequence": 5,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "type": "tile",
+          "handling": "default",
+          "header": "Business components",
+          "displayLines": "5",
+          "emptyState": "Add business component",
+          "path": "/api/BusComp/",
+          "autofocus": true,
+          "autofocusRecord": 0
+        }
+      },
+      "Create Business Component Popup Applet": {
+        "BC": "Business Component",
+        "template": {
+
+        },
+        "PR": {
+          "name": "Col2FieldsActions.js",
+          "payload": {
+          }
+        },
+        "fields": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "NewRecord",
+            "header": "Create",
+            "cssClass": "def-md-btn label-sm",
+            "sequence": 0,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "Cancel",
+            "action": "Cancel",
+            "header": "Cancel",
+            "cssClass": "shadow-md-btn label-sm",
+            "sequence": 2,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "type": "popup",
+          "handling": "default",
+          "header": "Business Component",
+          "path": "/api/BusComp/",
+          "fieldsHeader": "Fill in the data",
+          "controlsHeader": "Actions"
+        }
+      },
+      "Fields Tile Applet": {
+        "BC": "Field",
+        "template": "",
+        "PR": {
+          "name": "DefaultTileAppletPR.js",
+          "payload": {
+
+          }
+        },
+        "columns": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "pickListName",
+            "header": "Pick list",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-add-outline",
+            "cssClass": "tile-create",
+            "sequence": 0,
+            "payload": {
+              "applet": "Create Field Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "AppletConfg",
+            "action": "AppletConfg",
+            "header": "",
+            "icon": "icon-cogs",
+            "cssClass": "tile-confg",
+            "sequence": 1,
+            "payload": {
+              "applet": "",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "EditRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-pencil",
+            "cssClass": "tile-edit",
+            "sequence": 2,
+            "payload": {
+              "applet": "Edit Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "DeleteRecord",
+            "action": "DeleteRecord",
+            "header": "",
+            "icon": "icon-bin",
+            "cssClass": "tile-delete",
+            "sequence": 3,
+            "payload": {
+              "confirmation": "N"
+            }
+          },
+          {
+            "name": "NextRecords",
+            "action": "NextRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-right",
+            "cssClass": "next-nav",
+            "sequence": 4,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "PreviousRecords",
+            "action": "PreviousRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-left",
+            "cssClass": "previous-nav",
+            "sequence": 5,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "type": "tile",
+          "handling": "default",
+          "header": "Fields",
+          "displayLines": "5",
+          "emptyState": "Add field",
+          "path": "/api/Field/"
+        }
+      },
+      "Create Field Popup Applet": {
+        "BC": "Field",
+        "template": {
+
+        },
+        "PR": {
+          "name": "Col2FieldsActions.js",
+          "payload": {
+          }
+        },
+        "fields": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "pickListName",
+            "header": "Pick list",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "NewRecord",
+            "header": "Create",
+            "cssClass": "def-md-btn label-sm",
+            "sequence": 0,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "Cancel",
+            "action": "Cancel",
+            "header": "Cancel",
+            "cssClass": "shadow-md-btn label-sm",
+            "sequence": 2,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "type": "popup",
+          "handling": "default",
+          "header": "Field",
+          "path": "/api/Field/",
+          "fieldsHeader": "Fill in the data",
+          "controlsHeader": "Actions"
+        }
+      }
+    }
+  },
+  "Business Object View": {
+    "BO": "Business Object",
+    "Url": "/api/BusinessObject/",
+    "AppletList": {
+      "Business Object Tile Applet": {
+        "BC": "Business Object",
+        "template": "",
+        "PR": {
+          "name": "DefaultTileAppletPR.js",
+          "payload": {
+
+          }
+        },
+        "columns": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "primaryBusCompName",
+            "header": "Primary business component",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-add-outline",
+            "cssClass": "tile-create",
+            "sequence": 0,
+            "payload": {
+              "applet": "Create Business Object Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "AppletConfg",
+            "action": "AppletConfg",
+            "header": "",
+            "icon": "icon-cogs",
+            "cssClass": "tile-confg",
+            "sequence": 1,
+            "payload": {
+              "applet": "",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "EditRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-pencil",
+            "cssClass": "tile-edit",
+            "sequence": 2,
+            "payload": {
+              "applet": "Edit Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "DeleteRecord",
+            "action": "DeleteRecord",
+            "header": "",
+            "icon": "icon-bin",
+            "cssClass": "tile-delete",
+            "sequence": 3,
+            "payload": {
+              "confirmation": "N"
+            }
+          },
+          {
+            "name": "NextRecords",
+            "action": "NextRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-right",
+            "cssClass": "next-nav",
+            "sequence": 4,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "PreviousRecords",
+            "action": "PreviousRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-left",
+            "cssClass": "previous-nav",
+            "sequence": 5,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "type": "tile",
+          "handling": "default",
+          "header": "Business objects",
+          "displayLines": "5",
+          "emptyState": "Add business object",
+          "path": "/api/BusObject/",
+          "autofocus": true,
+          "autofocusRecord": 0
+        }
+      },
+      "Create Business Object Popup Applet": {
+        "BC": "Business Object",
+        "template": {
+
+        },
+        "PR": {
+          "name": "Col2FieldsActions.js",
+          "payload": {
+          }
+        },
+        "fields": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "primaryBusCompName",
+            "header": "Primary business component",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "NewRecord",
+            "header": "Create",
+            "cssClass": "def-md-btn label-sm",
+            "sequence": 0,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "Cancel",
+            "action": "Cancel",
+            "header": "Cancel",
+            "cssClass": "shadow-md-btn label-sm",
+            "sequence": 2,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "type": "popup",
+          "handling": "default",
+          "header": "Business Object",
+          "path": "/api/BusObject/",
+          "fieldsHeader": "Fill in the data",
+          "controlsHeader": "Actions"
+        }
+      },
+      "Business Object Component Tile Applet": {
+        "BC": "Business Object Component",
+        "template": "",
+        "PR": {
+          "name": "DefaultTileAppletPR.js",
+          "payload": {
+
+          }
+        },
+        "columns": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "busObjectName",
+            "header": "Business object",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "busCompName",
+            "header": "Business component",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "linkName",
+            "header": "Link",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-add-outline",
+            "cssClass": "tile-create",
+            "sequence": 0,
+            "payload": {
+              "applet": "Create Business Object Component Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "AppletConfg",
+            "action": "AppletConfg",
+            "header": "",
+            "icon": "icon-cogs",
+            "cssClass": "tile-confg",
+            "sequence": 1,
+            "payload": {
+              "applet": "",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "EditRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-pencil",
+            "cssClass": "tile-edit",
+            "sequence": 2,
+            "payload": {
+              "applet": "Edit Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "DeleteRecord",
+            "action": "DeleteRecord",
+            "header": "",
+            "icon": "icon-bin",
+            "cssClass": "tile-delete",
+            "sequence": 3,
+            "payload": {
+              "confirmation": "N"
+            }
+          },
+          {
+            "name": "NextRecords",
+            "action": "NextRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-right",
+            "cssClass": "next-nav",
+            "sequence": 4,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "PreviousRecords",
+            "action": "PreviousRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-left",
+            "cssClass": "previous-nav",
+            "sequence": 5,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "BusObjectComponent",
+          "type": "tile",
+          "handling": "default",
+          "header": "Business object components",
+          "displayLines": "5",
+          "emptyState": "Add business object component",
+          "path": "/api/BusObjectComponent/"
+        }
+      },
+      "Create Business Object Component Popup Applet": {
+        "BC": "Business Object Component",
+        "template": {
+
+        },
+        "PR": {
+          "name": "Col2FieldsActions.js",
+          "payload": {
+          }
+        },
+        "fields": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "busObjectName",
+            "header": "Business object",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "busCompName",
+            "header": "Business component",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "linkName",
+            "header": "Link",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "NewRecord",
+            "header": "Create",
+            "cssClass": "def-md-btn label-sm",
+            "sequence": 0,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "Cancel",
+            "action": "Cancel",
+            "header": "Cancel",
+            "cssClass": "shadow-md-btn label-sm",
+            "sequence": 2,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "BusObjectComponent",
+          "type": "popup",
+          "handling": "default",
+          "header": "Business object component",
+          "path": "/api/BusObjectComponent/",
+          "fieldsHeader": "Fill in the data",
+          "controlsHeader": "Actions"
+        }
+      }
+    }
+  },
+  "PickList View": {
+    "BO": "PickList",
+    "Url": "/api/PickList/",
+    "AppletList": {
+      "PickList Tile Applet": {
+        "BC": "PickList",
+        "template": "",
+        "PR": {
+          "name": "DefaultTileAppletPR.js",
+          "payload": {
+
+          }
+        },
+        "columns": [
+          {
+            "name": "recordName",
+            "header": "PickList name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "busCompName",
+            "header": "Business component",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-add-outline",
+            "cssClass": "tile-create",
+            "sequence": 0,
+            "payload": {
+              "applet": "Create PickList Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "AppletConfg",
+            "action": "AppletConfg",
+            "header": "",
+            "icon": "icon-cogs",
+            "cssClass": "tile-confg",
+            "sequence": 1,
+            "payload": {
+              "applet": "",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "EditRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-pencil",
+            "cssClass": "tile-edit",
+            "sequence": 2,
+            "payload": {
+              "applet": "Edit Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "DeleteRecord",
+            "action": "DeleteRecord",
+            "header": "",
+            "icon": "icon-bin",
+            "cssClass": "tile-delete",
+            "sequence": 3,
+            "payload": {
+              "confirmation": "N"
+            }
+          },
+          {
+            "name": "NextRecords",
+            "action": "NextRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-right",
+            "cssClass": "next-nav",
+            "sequence": 4,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "PreviousRecords",
+            "action": "PreviousRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-left",
+            "cssClass": "previous-nav",
+            "sequence": 5,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "PickList",
+          "type": "tile",
+          "handling": "default",
+          "header": "Picklists",
+          "displayLines": "5",
+          "emptyState": "Add picklist",
+          "path": "/api/PickList/",
+          "autofocus": true,
+          "autofocusRecord": 0
+        }
+      },
+      "Create PickList Popup Applet": {
+        "BC": "PickList",
+        "template": {
+
+        },
+        "PR": {
+          "name": "Col2FieldsActions.js",
+          "payload": {
+          }
+        },
+        "fields": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "busCompName",
+            "header": "Business component",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "NewRecord",
+            "header": "Create",
+            "cssClass": "def-md-btn label-sm",
+            "sequence": 0,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "Cancel",
+            "action": "Cancel",
+            "header": "Cancel",
+            "cssClass": "shadow-md-btn label-sm",
+            "sequence": 2,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "PickList",
+          "type": "popup",
+          "handling": "default",
+          "header": "PickList",
+          "path": "/api/PickList/",
+          "fieldsHeader": "Fill in the data",
+          "controlsHeader": "Actions"
+        }
+      }
+    }
+  },
+  "Physical Render View": {
+    "BO": "PhysicalRender",
+    "Url": "/api/PhysicalRender/",
+    "AppletList": {
+      "Physical Render Tile Applet": {
+        "BC": "PhysicalRender",
+        "template": "",
+        "PR": {
+          "name": "DefaultTileAppletPR.js",
+          "payload": {
+          }
+        },
+        "columns": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-add-outline",
+            "cssClass": "tile-create",
+            "sequence": 0,
+            "payload": {
+              "applet": "Create Physical Render Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "AppletConfg",
+            "action": "AppletConfg",
+            "header": "",
+            "icon": "icon-cogs",
+            "cssClass": "tile-confg",
+            "sequence": 1,
+            "payload": {
+              "applet": "",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "EditRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-pencil",
+            "cssClass": "tile-edit",
+            "sequence": 2,
+            "payload": {
+              "applet": "Edit Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "DeleteRecord",
+            "action": "DeleteRecord",
+            "header": "",
+            "icon": "icon-bin",
+            "cssClass": "tile-delete",
+            "sequence": 3,
+            "payload": {
+              "confirmation": "N"
+            }
+          },
+          {
+            "name": "NextRecords",
+            "action": "NextRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-right",
+            "cssClass": "next-nav",
+            "sequence": 4,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "PreviousRecords",
+            "action": "PreviousRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-left",
+            "cssClass": "previous-nav",
+            "sequence": 5,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "PhysicalRender",
+          "type": "tile",
+          "handling": "default",
+          "header": "Physical renders",
+          "displayLines": "5",
+          "emptyState": "Add physical render",
+          "path": "/api/PhysicalRender/"
+        }
+      },
+      "Create Physical Render Popup Applet": {
+        "BC": "PhysicalRender",
+        "template": {
+
+        },
+        "PR": {
+          "name": "Col2FieldsActions.js",
+          "payload": {
+          }
+        },
+        "fields": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "NewRecord",
+            "header": "Create",
+            "cssClass": "def-md-btn label-sm",
+            "sequence": 0,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "Cancel",
+            "action": "Cancel",
+            "header": "Cancel",
+            "cssClass": "shadow-md-btn label-sm",
+            "sequence": 2,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "PhysicalRender",
+          "type": "popup",
+          "handling": "default",
+          "header": "Physical render",
+          "path": "/api/PhysicalRender/",
+          "fieldsHeader": "Fill in the data",
+          "controlsHeader": "Actions"
+        }
+      }
+    }
+  },
+  "Icon View": {
+    "BO": "Icon",
+    "Url": "/api/Icon/",
+    "AppletList": {
+      "Icon Tile Applet": {
+        "BC": "Icon",
+        "template": "",
+        "PR": {
+          "name": "DefaultTileAppletPR.js",
+          "payload": {
+          }
+        },
+        "columns": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "imgPath",
+            "header": "Path to image",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "cssClass",
+            "header": "Css class",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-add-outline",
+            "cssClass": "tile-create",
+            "sequence": 0,
+            "payload": {
+              "applet": "Create Icon Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "AppletConfg",
+            "action": "AppletConfg",
+            "header": "",
+            "icon": "icon-cogs",
+            "cssClass": "tile-confg",
+            "sequence": 1,
+            "payload": {
+              "applet": "",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "EditRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-pencil",
+            "cssClass": "tile-edit",
+            "sequence": 2,
+            "payload": {
+              "applet": "Edit Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "DeleteRecord",
+            "action": "DeleteRecord",
+            "header": "",
+            "icon": "icon-bin",
+            "cssClass": "tile-delete",
+            "sequence": 3,
+            "payload": {
+              "confirmation": "N"
+            }
+          },
+          {
+            "name": "NextRecords",
+            "action": "NextRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-right",
+            "cssClass": "next-nav",
+            "sequence": 4,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "PreviousRecords",
+            "action": "PreviousRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-left",
+            "cssClass": "previous-nav",
+            "sequence": 5,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "Icon",
+          "type": "tile",
+          "handling": "default",
+          "header": "Icons",
+          "displayLines": "5",
+          "emptyState": "Add icon",
+          "path": "/api/Icon/"
+        }
+      },
+      "Create Icon Popup Applet": {
+        "BC": "Icon",
+        "template": {
+
+        },
+        "PR": {
+          "name": "Col2FieldsActions.js",
+          "payload": {
+          }
+        },
+        "fields": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "imgPath",
+            "header": "Path to image",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "cssClass",
+            "header": "Css class",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "NewRecord",
+            "header": "Create",
+            "cssClass": "def-md-btn label-sm",
+            "sequence": 0,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "Cancel",
+            "action": "Cancel",
+            "header": "Cancel",
+            "cssClass": "shadow-md-btn label-sm",
+            "sequence": 2,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "Icon",
+          "type": "popup",
+          "handling": "default",
+          "header": "Icon",
+          "path": "/api/Icon/",
+          "fieldsHeader": "Fill in the data",
+          "controlsHeader": "Actions"
+        }
+      }
+    }
+  },
+  "Action View": {
+    "BO": "Action",
+    "Url": "/api/Action/",
+    "AppletList": {
+      "Action Tile Applet": {
+        "BC": "Action",
+        "template": "",
+        "PR": {
+          "name": "DefaultTileAppletPR.js",
+          "payload": {
+          }
+        },
+        "columns": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-add-outline",
+            "cssClass": "tile-create",
+            "sequence": 0,
+            "payload": {
+              "applet": "Create Action Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "AppletConfg",
+            "action": "AppletConfg",
+            "header": "",
+            "icon": "icon-cogs",
+            "cssClass": "tile-confg",
+            "sequence": 1,
+            "payload": {
+              "applet": "",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "EditRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-pencil",
+            "cssClass": "tile-edit",
+            "sequence": 2,
+            "payload": {
+              "applet": "Edit Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "DeleteRecord",
+            "action": "DeleteRecord",
+            "header": "",
+            "icon": "icon-bin",
+            "cssClass": "tile-delete",
+            "sequence": 3,
+            "payload": {
+              "confirmation": "N"
+            }
+          },
+          {
+            "name": "NextRecords",
+            "action": "NextRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-right",
+            "cssClass": "next-nav",
+            "sequence": 4,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "PreviousRecords",
+            "action": "PreviousRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-left",
+            "cssClass": "previous-nav",
+            "sequence": 5,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "Action",
+          "type": "tile",
+          "handling": "default",
+          "header": "Actions",
+          "displayLines": "5",
+          "emptyState": "Add action",
+          "path": "/api/Action/"
+        }
+      },
+      "Create Action Popup Applet": {
+        "BC": "Action",
+        "template": {
+
+        },
+        "PR": {
+          "name": "Col2FieldsActions.js",
+          "payload": {
+          }
+        },
+        "fields": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "NewRecord",
+            "header": "Create",
+            "cssClass": "def-md-btn label-sm",
+            "sequence": 0,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "Cancel",
+            "action": "Cancel",
+            "header": "Cancel",
+            "cssClass": "shadow-md-btn label-sm",
+            "sequence": 2,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "Action",
+          "type": "popup",
+          "handling": "default",
+          "header": "Action",
+          "path": "/api/Action/",
+          "fieldsHeader": "Fill in the data",
+          "controlsHeader": "Actions"
+        }
+      },
+      "Action UP Tile Applet": {
+        "BC": "Action UP",
+        "template": "",
+        "PR": {
+          "name": "DefaultTileAppletPR.js",
+          "payload": {
+          }
+        },
+        "columns": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          },
+          {
+            "name": "value",
+            "header": "Value",
+            "type": "input",
+            "up": "",
+            "display": true,
+            "sequence": 0,
+            "required": true
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-add-outline",
+            "cssClass": "tile-create",
+            "sequence": 0,
+            "payload": {
+              "applet": "Create Action UP Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "AppletConfg",
+            "action": "AppletConfg",
+            "header": "",
+            "icon": "icon-cogs",
+            "cssClass": "tile-confg",
+            "sequence": 1,
+            "payload": {
+              "applet": "",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "EditRecord",
+            "action": "ShowPopup",
+            "header": "",
+            "icon": "icon-pencil",
+            "cssClass": "tile-edit",
+            "sequence": 2,
+            "payload": {
+              "applet": "Edit Control Popup Applet",
+              "size": "lg"
+            }
+          },
+          {
+            "name": "DeleteRecord",
+            "action": "DeleteRecord",
+            "header": "",
+            "icon": "icon-bin",
+            "cssClass": "tile-delete",
+            "sequence": 3,
+            "payload": {
+              "confirmation": "N"
+            }
+          },
+          {
+            "name": "NextRecords",
+            "action": "NextRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-right",
+            "cssClass": "next-nav",
+            "sequence": 4,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "PreviousRecords",
+            "action": "PreviousRecords",
+            "header": "",
+            "icon": "icon-chevron-thin-left",
+            "cssClass": "previous-nav",
+            "sequence": 5,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "Action UP",
+          "type": "tile",
+          "handling": "default",
+          "header": "Action user properties",
+          "displayLines": "5",
+          "emptyState": "Add action payload",
+          "path": "/api/ActionUP/"
+        }
+      },
+      "Create Action UP Popup Applet": {
+        "BC": "Action UP",
+        "template": {
+
+        },
+        "PR": {
+          "name": "Col2FieldsActions.js",
+          "payload": {
+          }
+        },
+        "fields": [
+          {
+            "name": "recordName",
+            "header": "Name",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          },
+          {
+            "name": "value",
+            "header": "Value",
+            "type": "input",
+            "up": "ErrorUnderField",
+            "display": true,
+            "sequence": 0,
+            "required": true,
+            "maxlength": 120
+          }
+        ],
+        "controls": [
+          {
+            "name": "NewRecord",
+            "action": "NewRecord",
+            "header": "Create",
+            "cssClass": "def-md-btn label-sm",
+            "sequence": 0,
+            "payload": {
+
+            }
+          },
+          {
+            "name": "Cancel",
+            "action": "Cancel",
+            "header": "Cancel",
+            "cssClass": "shadow-md-btn label-sm",
+            "sequence": 2,
+            "payload": {
+
+            }
+          }
+        ],
+        "payload": {
+          "entity": "Action UP",
+          "type": "popup",
+          "handling": "default",
+          "header": "Action user property",
+          "path": "/api/ActionUP/",
+          "fieldsHeader": "Fill in the data",
+          "controlsHeader": "Actions"
+        }
+      }
+    }
+  }
+}

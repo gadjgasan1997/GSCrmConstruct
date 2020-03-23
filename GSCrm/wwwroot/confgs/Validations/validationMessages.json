@@ -1,0 +1,13 @@
+{
+  /* Шаблон
+    "Messages": {         // Все сообщения
+      "": {               // Код сообщения
+        "Language": ""    // Перевод
+      }
+    } */
+  "Messages": {
+    "fieldIsRequired": {
+      "ENU": "Field [&fieldName] is required."
+    }
+  }
+}
