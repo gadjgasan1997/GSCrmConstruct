@@ -51,5 +51,3 @@ https://github.com/gadjgasan1997/GSCrm/tree/master/GSCrm/Controllers/Default/API
 https://github.com/gadjgasan1997/GSCrm/tree/master/GSCrm/Controllers/Default/APIControllers/ScreenControllers
 
 По пути https://github.com/gadjgasan1997/GSCrm/tree/master/GSCrm/Services/Info хранятся классы для работы с инфомрацией об апплетах, представлениях и экранах
-
-Ну по сути все основное я описал, кроме фронта. Он находится по пути https://github.com/gadjgasan1997/GSCrm/tree/master/GSCrm/wwwroot.
