@@ -1,0 +1,36 @@
+﻿.gs-tabs {
+  border-top: 2px solid grey;
+  padding-top: 50px; }
+  .gs-tabs .gs-tabs-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 85%;
+    margin: auto;
+    justify-content: space-around; }
+    .gs-tabs .gs-tabs-body .gs-tab {
+      cursor: pointer; }
+      .gs-tabs .gs-tabs-body .gs-tab > div:first-child > p {
+        margin: 0; }
+      .gs-tabs .gs-tabs-body .gs-tab > div:last-child {
+        background: white;
+        border-radius: 1.5px;
+        height: 2px; }
+    .gs-tabs .gs-tabs-body .gs-tab:hover > div:last-child {
+      background: #008C95; }
+    .gs-tabs .gs-tabs-body .gs-tab, .gs-tabs .gs-tabs-body .gs-tab-focused {
+      margin-right: 15px;
+      margin: auto; }
+      .gs-tabs .gs-tabs-body .gs-tab > div:first-child, .gs-tabs .gs-tabs-body .gs-tab-focused > div:first-child {
+        font-family: IBM Plex Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 21px;
+        color: #76797B; }
+    .gs-tabs .gs-tabs-body .gs-tab-focused {
+      cursor: default; }
+      .gs-tabs .gs-tabs-body .gs-tab-focused > div:last-child {
+        background: #008C95;
+        border-radius: 1.5px;
+        height: 3px; }

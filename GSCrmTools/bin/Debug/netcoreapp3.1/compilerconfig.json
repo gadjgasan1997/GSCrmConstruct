@@ -1,0 +1,42 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/Applets.css",
+    "inputFile": "wwwroot/css/Applets.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Controls.css",
+    "inputFile": "wwwroot/css/Controls.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Navbar.css",
+    "inputFile": "wwwroot/css/Navbar.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Tabs.css",
+    "inputFile": "wwwroot/css/Tabs.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Fonts.css",
+    "inputFile": "wwwroot/css/Fonts.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Application.css",
+    "inputFile": "wwwroot/css/Application.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/CommonBlocks.css",
+    "inputFile": "wwwroot/css/CommonBlocks.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/TreadBar.css",
+    "inputFile": "wwwroot/css/TreadBar.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/View.css",
+    "inputFile": "wwwroot/css/View.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Modal.css",
+    "inputFile": "wwwroot/css/Modal.scss"
+  }
+]

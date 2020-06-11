@@ -1,0 +1,481 @@
+﻿/* Input */
+
+.gs-field {
+    height: 45px;
+    width: 100%;
+    border: 1px solid grey;
+    cursor: text;
+    border-radius: 3px;
+    position: relative;
+    min-width: 180px;
+
+    > .gs-field-input {
+        top: 18px;
+        padding-right: 0;
+        height: 20px;
+    }
+
+    > .gs-field-label {
+        user-select: none;
+        -webkit-transform: translateY(0) scaleY(0.85);
+        transform: translateY(0) scaleY(0.85);
+        transition-duration: 200ms;
+        transition-timing-function: linear;
+        z-index: 100;
+        height: 20px;
+        top: 13.5px;
+        color: rgb(149, 155, 161);
+        margin: 0 !important;
+        text-align: start
+    }
+
+    > .gs-field-label, .gs-field-input {
+        font-family: "IBM Plex Sans", "IBMPlexSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+        font-size: 14px;
+        display: block;
+        width: 90%;
+        left: 5%;
+        position: absolute;
+        resize: none;
+        border: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0;
+
+        > .gs-field-counter {
+            position: absolute;
+            top: 0;
+            left: calc(100% - 50px);
+            color: rgb(149, 155, 161);
+        }
+    }
+}
+
+.gs-field-is-focused:not(.field-checkbox) {
+    border: 1px solid #008c95 !important;
+    box-shadow: 0 0 0px 1px #008c95 !important;
+}
+
+.gs-field.gs-field-is-focused, .gs-field.gs-field-is-filled {
+    > .gs-field-label {
+        -webkit-transform: translateY(-15px) scaleY(0.85);
+        transform: translateY(-15px) scaleY(0.85);
+    }
+}
+
+.gs-field-error {
+    border: 1px solid red !important;
+    box-shadow: 0 0 0px 1px red !important;
+}
+
+.gs-field, .gs-field-input, .gs-field-is-focused, .gs-field-is-filled, .gs-field-label {
+    outline: none !important
+}
+
+.gs-field:focus, .gs-field-input:focus, .gs-field-is-focused:focus, .gs-field-is-filled:focus, .gs-field-label:focus {
+    outline: none !important
+}
+
+/* Date and picklist */
+
+.select-area {
+    position: absolute;
+    z-index: 3000;
+}
+
+.field-date, .field-picklist {
+    height: 45px;
+    width: 100%;
+    border: 1px solid grey !important;
+    border-radius: 3px;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+
+    .gs-field-input {
+        cursor: pointer !important;
+        position: relative;
+        width: calc(100% - 50px)
+    }
+
+    .pick-divider {
+        position: absolute;
+        height: 45px;
+        width: 1px;
+        left: calc(100% - 47px);
+        background-color: grey;
+        top: -1px;
+    }
+
+    .pick-area {
+        position: absolute;
+        left: calc(100% - 38px);
+        top: 6px;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+        cursor: pointer;
+        color: lightgrey;
+        opacity: 1;
+        background-color: white;
+        z-index: 100;
+    }
+
+    .pick-area:hover {
+        color: #008c95
+    }
+}
+
+.field-date.gs-field-is-focused,
+.field-date.gs-field-is-filled,
+.field-picklist.gs-field-is-focused,
+.field-picklist.gs-field-is-filled {
+    > .gs-field-label {
+        -webkit-transform: translateY(-15px) scaleY(0.85);
+        transform: translateY(-15px) scaleY(0.85);
+    }
+
+    .pick-divider {
+        background-color: #008c95;
+    }
+
+    .pick-divider:after {
+        content: "";
+        position: absolute;
+        top: 2.5px;
+        left: 2px;
+        width: 40px;
+        height: 40px;
+        background-color: white
+    }
+
+    .pick-area {
+        color: #008c95 !important;
+    }
+}
+
+.field-picklist {
+    .pick-area {
+        transform: rotate(90deg);
+    }
+}
+
+/* Calendar */
+
+.calendar-mini {
+    position: absolute;
+    width: 400px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 8px 14px rgba(149, 155, 161, 0.3), 0px 0px 2px rgba(149, 155, 161, 0.6);
+    border-radius: 4px;
+    padding: 10px;
+
+    .month-list {
+        position: relative;
+
+        > div {
+            cursor: pointer;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            color: #c9c9c9;
+            font-size: 16px;
+            user-select: none
+        }
+    }
+
+    .month-list {
+        > div:hover {
+            color: #2ecc71 !important;
+            font-family: "IBM Plex Sans", "IBMPlexSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+        }
+    }
+
+    .days-list {
+        position: relative;
+
+        > div {
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: #aaaaaa;
+            font-weight: 700;
+            font-size: 16px;
+            user-select: none;
+        }
+    }
+
+    .month-days-list {
+        position: relative;
+
+        .month-day {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            margin-left: 7px !important;
+            text-align: center;
+            line-height: 35px;
+            color: black;
+            font-weight: 400;
+            font-size: 16px;
+            user-select: none;
+            border: 2px solid transparent
+        }
+
+        .month-day:hover {
+            cursor: pointer;
+            color: white;
+            font-weight: 700;
+            background-color: #2ecc71;
+            border-radius: 50%;
+        }
+
+        .month-day-focused {
+            color: white;
+            font-weight: 700;
+            background-color: #2ecc71;
+            border-radius: 50%;
+        }
+
+        .current-day {
+            color: black;
+            border: 2px solid #2980b9 !important;
+            border-radius: 50%
+        }
+
+        .holiday-day {
+            border: 1px solid red;
+            border-radius: 50%
+        }
+    }
+}
+
+/* Picklist */
+
+.gs-picklist {
+    height: 300px;
+    overflow-y: auto;
+    background-color: #FFFFFF;
+    box-shadow: 0px 8px 14px rgba(149, 155, 161, 0.3), 0px 0px 2px rgba(149, 155, 161, 0.6);
+    border-radius: 4px;
+    opacity: 1;
+
+    > .picklist-item {
+        cursor: pointer
+    }
+
+    > .picklist-item, .picklist-item-focused {
+        width: 100%;
+        padding-left: 5px;
+        padding-right: 5px;
+        height: 40px;
+        user-select: none;
+    }
+
+    > .picklist-item-focused {
+    }
+
+    > .picklist-item:hover, .picklist-item-focused {
+        background-color: lightgray;
+    }
+
+    > .picklist-item:first-child {
+        margin-top: 10px
+    }
+
+    > .picklist-item:last-child {
+        margin-bottom: 10px
+    }
+}
+
+/* Checkbox */
+
+.field-checkbox-tile {
+    > .checkbox-check {
+        position: relative;
+        z-index: 1000;
+        height: 20px;
+        width: 20px;
+        margin-left: calc(50% - 10px);
+        margin-right: 10px;
+        float: left;
+        background: #FFFFFF;
+        border: 2px solid #B2B2B2;
+        box-sizing: border-box;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    > .checkbox-check:hover {
+        background-color: rgba(0, 0, 0, 0.08);
+    }
+}
+
+.field-checkbox {
+    height: 45px;
+    outline: none !important;
+    min-width: 180px;
+
+    > .checkbox-check {
+        height: 20px;
+        width: 20px;
+        margin-left: 10px;
+        margin-top: 12.5px;
+        margin-right: 10px;
+        float: left;
+        background: #FFFFFF;
+        border: 2px solid #B2B2B2;
+        box-sizing: border-box;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    > .checkbox-check:hover {
+        background-color: rgba(0, 0, 0, 0.08);
+    }
+
+    > div:last-child {
+        height: 20px;
+        line-height: 45px;
+        user-select: none
+    }
+}
+
+.field-checkbox.gs-field-is-filled, .field-checkbox-tile.gs-field-is-filled {
+    > .checkbox-check {
+        background-color: #008C95;
+        position: relative;
+        border: none !important
+    }
+
+    > .checkbox-check::before {
+        content: "";
+        position: absolute;
+        width: 12.8px;
+        height: 2px;
+        top: 9px;
+        left: 5.7px;
+        transform: rotate(135deg);
+        background-color: white;
+    }
+
+    > .checkbox-check::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 8px;
+        top: 8.3px;
+        left: 4.5px;
+        transform: rotate(-45deg);
+        background-color: white;
+    }
+}
+
+/* Drilldown */
+.field-drilldown-tile {
+    > p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+}
+
+.field-drilldown {
+    height: 100%;
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    user-select: none;
+
+    > p {
+        margin: 0 !important;
+        line-height: 45px;
+        text-align: center;
+        display: inline-block;
+    }
+}
+
+.field-drilldown,
+.field-drilldown-tile {
+    > p:hover {
+        text-decoration: underline;
+        color: #008c95;
+    }
+}
+
+/* Readonly */
+    .field-input.gs-field-readonly,
+    .field-picklist.gs-field-readonly,
+    .field-date.gs-field-readonly {
+        background-color: #E2E3E5;
+        cursor: text !important;
+
+        .gs-field-input {
+            background-color: #E2E3E5;
+            cursor: text !important;
+        }
+
+        .gs-field-label {
+            color: black
+        }
+    }
+
+    .field-picklist.gs-field-readonly {
+        .pick-area.block-center,
+        .pick-divider::after {
+            background-color: #E2E3E5 !important;
+            cursor: auto !important;
+        }
+
+        .pick-area {
+            color: black
+        }
+    }
+
+    .field-checkbox-tile.gs-field-readonly .checkbox-check,
+    .field-checkbox.gs-field-readonly .checkbox-check {
+        cursor: auto;
+        border: 2px solid #B2B2B2;
+        box-sizing: border-box;
+    }
+
+    .field-checkbox-tile.gs-field-readonly.gs-field-is-filled .checkbox-check,
+    .field-checkbox.gs-field-readonly.gs-field-is-filled .checkbox-check {
+        background-color: transparent
+    }
+
+    .field-checkbox-tile.gs-field-readonly .checkbox-check,
+    .field-checkbox.gs-field-readonly .checkbox-check {
+        background-color: #E2E3E5
+    }
+
+    .field-checkbox-tile.gs-field-readonly .checkbox-check::before,
+    .field-checkbox-tile.gs-field-readonly .checkbox-check::after,
+    .field-checkbox.gs-field-readonly .checkbox-check::before,
+    .field-checkbox.gs-field-readonly .checkbox-check::after {
+        background-color: black
+    }
+
+    .field-drilldown.gs-field-readonly {
+        cursor: auto !important
+    }
+
+    .field-drilldown.gs-field-readonly,
+    .field-drilldown-tile.gs-field-readonly {
+        color: black !important;
+    }
+
+    .field-drilldown.gs-field-readonly:hover,
+    .field-drilldown-tile.gs-field-readonly:hover {
+        > p {
+            text-decoration: none !important;
+            color: black !important;
+        }
+    }

@@ -1,0 +1,166 @@
+﻿/* Buttons and common blocks */
+.def-md-btn {
+    position: relative;
+    background-color: #008c95;
+    color: white;
+    height: 45px;
+    border: 1px solid transparent;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 360px;
+    min-width: 180px;
+    user-select: none
+}
+
+.def-md-btn:hover {
+    background-color: white;
+    cursor: pointer;
+    color: #008c95;
+    border: 1px solid #008c95;
+}
+
+.shadow-md-btn {
+    position: relative;
+    background-color: #F1F1F1;
+    color: black;
+    height: 45px;
+    border: 1px solid transparent;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 360px;
+    min-width: 180px;
+    user-select: none
+}
+
+.shadow-md-btn:hover {
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.row-actions-sm {
+    width: 100px;
+
+    .row.justify-content-around {
+        width: 100px
+    }
+}
+
+.row-actions-md {
+    width: 150px;
+
+    .row.justify-content-around {
+        width: 150px
+    }
+}
+
+.row-actions-lg {
+    width: 200px;
+
+    .row.justify-content-around {
+        width: 200px
+    }
+}
+
+.row-actions-sm,
+.row-actions-md,
+.row-actions-lg {
+    .row.justify-content-around {
+        margin: 0 !important;
+        height: 100%
+    }
+
+    .tile-copy {
+        font-size: 18px
+    }
+
+    .tile-create {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 9px;
+        margin-bottom: 9px;
+    }
+
+    .tile-edit,
+    .tile-delete,
+    .tile-copy {
+        visibility: hidden;
+        margin-top: 4px;
+    }
+
+    .tile-edit,
+    .tile-delete {
+        font-size: 16px
+    }
+
+    .tile-edit,
+    .tile-delete,
+    .tile-copy,
+    .tile-create {
+        z-index: 500;
+        width: 35px !important;
+        height: 35px !important;
+        position: relative;
+
+        :hover, :focus {
+            color: #008c95;
+            cursor: pointer;
+            background-color: lightgrey;
+            border-radius: 20%;
+        }
+    }
+}
+
+
+.block-center {
+    position: relative;
+    display: table;
+    height: 100%;
+    width: 100%;
+
+    > div, > span, > p, h3, h4, h5 {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+}
+
+.col-padding {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 0;
+    padding-right: 0;
+
+    > div {
+        max-width: 90%;
+        margin: 0 5% 0 5%
+    }
+}
+
+.divider-mr-sm,
+.divider-mr-md,
+.divider-mr-lg,
+.divider-mr-none {
+    width: 100% !important;
+    height: 1px;
+    background-color: #EBEBEB
+}
+
+.divider-mr-none {
+    margin: 0 !important;
+}
+
+.divider-mr-sm {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important
+}
+
+.divider-mr-md {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important
+}
+
+.divider-mr-lg {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important
+}

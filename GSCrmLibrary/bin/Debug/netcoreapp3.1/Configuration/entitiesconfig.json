@@ -1,0 +1,62 @@
+{
+  "Table": {
+    "Path": "\\Models\\TableModels\\",
+    "Namespace": "GSCrmApplication.Models.TableModels",
+    "BaseType": "DataEntity"
+  },
+  "BusinessComponent": {
+    "Path": "\\Models\\BusinessComponentModels\\",
+    "Namespace": "GSCrmApplication.Models.BusinessComponentModels",
+    "BaseType": "BUSEntity"
+  },
+  "Applet": {
+    "Path": "\\Models\\AppletModels\\",
+    "Namespace": "GSCrmApplication.Models.AppletModels",
+    "BaseType": "UIEntity"
+  },
+  "DataBUSFactory": {
+    "Path": "\\Factories\\DataBUSFactories\\",
+    "Namespace": "GSCrmApplication.Factories.DataBUSFactories",
+    "BaseType": "DataBUSFactory"
+  },
+  "BUSUIFactory": {
+    "Path": "\\Factories\\BUSUIFactories\\",
+    "Namespace": "GSCrmApplication.Factories.BUSUIFactories",
+    "BaseType": "BUSUIFactory"
+  },
+  "AppletController": {
+    "Path": "\\Controllers\\APIControllers\\AppletControllers\\",
+    "Namespace": "GSCrmApplication.Controllers.APIControllers.AppletControllers",
+    "BaseType": "MainAppletController"
+  },
+  "BusinessComponentController": {
+    "Path": "\\Controllers\\APIControllers\\BusinessComponentControllers\\",
+    "Namespace": "GSCrmApplication.Controllers.APIControllers.BusinessComponentControllers",
+    "BaseType": "MainBusinessComponentController"
+  },
+  "ScreenController": {
+    "Path": "\\Controllers\\MVCControllers\\",
+    "Namespace": "GSCrmApplication.Controllers.MVCControllers",
+    "BaseType": null
+  },
+  "ViewCshtml": {
+    "Path": "\\Views\\",
+    "Namespace": null,
+    "BaseType": null
+  },
+  "Dll": {
+    "Path": "\\GenerateLibraries\\",
+    "Namespace": "GSCrmApplication.GenerateLibraries",
+    "BaseType": null
+  },
+  "Migration": {
+    "Path": "\\GenerateMigrations\\",
+    "Namespace": "GSCrmApplication.GenerateMigrations",
+    "BaseType": null
+  },
+  "Context": {
+    "Path": "\\Data\\",
+    "Namespace": "GSCrmApplication.Data",
+    "BaseType": null
+  }
+}

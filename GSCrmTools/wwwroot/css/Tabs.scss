@@ -1,0 +1,62 @@
+﻿.gs-tabs {
+    border-top: 2px solid grey;
+    padding-top: 50px;
+    .gs-tabs-header {
+
+    }
+
+    .gs-tabs-body {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 85%;
+        margin: auto;
+        justify-content: space-around;
+
+        .gs-tab {
+            cursor: pointer;
+
+            > div:first-child {
+                > p {
+                    margin: 0
+                }
+            }
+
+            > div:last-child {
+                background: white;
+                border-radius: 1.5px;
+                height: 2px
+            }
+        }
+
+        .gs-tab:hover {
+            > div:last-child {
+                background: #008C95;
+            }
+        }
+
+        .gs-tab, .gs-tab-focused {
+            margin-right: 15px;
+            margin: auto;
+
+            > div:first-child {
+                font-family: IBM Plex Sans;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 21px;
+                color: #76797B;
+            }
+        }
+
+        .gs-tab-focused {
+            cursor: default;
+
+            > div:last-child {
+                background: #008C95;
+                border-radius: 1.5px;
+                height: 3px;
+            }
+        }
+    }
+}

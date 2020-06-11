@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GSCrm_Application</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body style="margin-bottom: 0px">
+    <div data-type="GSCrmApplication">
+        <div data-type="GSCrmHeader"></div>
+        <div data-type="GSCrmBody">
+            @RenderBody()
+        </div>
+        <div data-type="GSCrmAreas"></div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/GSCrmInfo.js"></script>
+    <script src="~/js/Core-GSCrm.js"></script>
+    <script src="~/js/sweetalert2/dist/sweetalert2.all.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
