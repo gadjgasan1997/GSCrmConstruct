@@ -14,6 +14,7 @@ using GSCrmLibrary.Models.RequestModels;
 using GSCrmLibrary.Factories.MainFactories;
 using GSCrmLibrary.Models.MainEntities;
 using static GSCrmLibrary.Data.ComponentsRecordsInfo;
+using System.Reflection.Emit;
 
 namespace GSCrmLibrary.Controllers.ApiControllers.MainControllers
 {
@@ -139,6 +140,8 @@ namespace GSCrmLibrary.Controllers.ApiControllers.MainControllers
             ViewItem viewItem = viewInfo.ViewItems.Where(apId => apId.AppletId == applet.Id).FirstOrDefault();
             TBUSUIFactory busUIFactory = new TBUSUIFactory();
             TDataBUSFactory dataBUSFactory = new TDataBUSFactory();
+            TBusinessComponent defaultRecord = new TBusinessComponent();
+            List<TTable> currentRecords = new List<TTable>();
 
             // Получение данных
             List<TTable> dataEntities = orderedEntities.ToList();
@@ -146,6 +149,9 @@ namespace GSCrmLibrary.Controllers.ApiControllers.MainControllers
             object[] searchSpecArgs = (object[])GetSearchSpecification(objectComponent.Name, SearchSpecTypes.SearchSpecArgs);
             if (!string.IsNullOrWhiteSpace(searchSpecification))
                 dataEntities = orderedEntities.AsQueryable().Where(searchSpecification, searchSpecArgs).ToList();
+            List<string> displayRecords = GetDisplayedRecords(busComp.Name);
+            List<string> dataEntitiesId = dataEntities.Select(i => i?.Id.ToString()).ToList();
+            string selectedRecordId = GetSelectedRecord(busComp.Name);
 
             // Среди БКО ищу ту, у которой линка не пустая и где дочерней БК является текущая
             Link link = boComponents
@@ -199,30 +205,15 @@ namespace GSCrmLibrary.Controllers.ApiControllers.MainControllers
                 else dataEntities = new List<TTable>();
             }
 
-            // Иначе
-            else
+            // В зависимости от действия, произошедшего в представлении
+            if (dataEntities.Count > 0)
+                defaultRecord = dataBUSFactory.DataToBusiness(dataEntities.ElementAtOrDefault(viewItem.AutofocusRecord), context);
+            switch (viewInfo.ActionType)
             {
-                // Получение текущей записи из автофокуса элемента представления
-                var selectedRecord = GetSelectedRecord(busComp.Name);
-                var currentRecord = selectedRecord == null
-                    ? orderedEntities.ElementAtOrDefault(viewItem.AutofocusRecord)
-                    : orderedEntities.FirstOrDefault(i => i.Id.ToString() == selectedRecord);
-            }
-
-            // Отбор записей
-            List<string> displayRecords = GetDisplayedRecords(busComp.Name);
-            List<string> dataEntitiesId = dataEntities.Select(i => i?.Id.ToString()).ToList();
-            List<TTable> currentRecords = new List<TTable>();
-            string selectedRecordId = GetSelectedRecord(busComp.Name);
-            if (viewInfo.CurrentApplet?.Name == appletName)
-            {
-                // Обнуление текущего контрола
-                viewInfo.CurrentControl = null;
-
-                switch (viewInfo.ActionType)
-                {
-                    // Навигация вперед по списку
-                    case ActionType.NextRecords:
+                // Навигация вперед по списку
+                case ActionType.NextRecords:
+                    if (viewInfo.CurrentApplet?.Name == appletName)
+                    {
                         // Ищу по id последней записи на тайле
                         TTable lastRecord = dataEntities.FirstOrDefault(i => i.Id.ToString() == displayRecords.LastOrDefault());
 
@@ -240,10 +231,18 @@ namespace GSCrmLibrary.Controllers.ApiControllers.MainControllers
                             SetSelectedRecord(busComp.Name, nextRecord.Id.ToString());
                             ComponentsContext<TBusinessComponent>.SetComponentContext(busComp.Name, dataBUSFactory.DataToBusiness(nextRecord, context));
                         }
-                        break;
+                    }
+                    else
+                    {
+                        SetSelectedRecord(busComp.Name, dataEntitiesId.ElementAtOrDefault(viewItem.AutofocusRecord));
+                        ComponentsContext<TBusinessComponent>.SetComponentContext(busComp.Name, defaultRecord);
+                    }
+                    break;
 
-                    // Навигация назад по списку
-                    case ActionType.PreviousRecords:
+                // Навигация назад по списку
+                case ActionType.PreviousRecords:
+                    if (viewInfo.CurrentApplet?.Name == appletName)
+                    {
                         // Ищу по id первой записи на тайле
                         TTable firstRecord = dataEntities.FirstOrDefault(i => i.Id.ToString() == displayRecords.FirstOrDefault());
 
@@ -270,32 +269,14 @@ namespace GSCrmLibrary.Controllers.ApiControllers.MainControllers
                             SetSelectedRecord(busComp.Name, previousRecord.Id.ToString());
                             ComponentsContext<TBusinessComponent>.SetComponentContext(busComp.Name, dataBUSFactory.DataToBusiness(previousRecord, context));
                         }
-                        break;
-                }
-
-                if (viewInfo.CurrentPopupApplet != null)
-                {
-                    // Обнуление текущего контрола
-                    viewInfo.CurrentPopupControl = null;
-
-                    switch (viewInfo.ActionType)
-                    {
-                        case ActionType.NewRecord:
-                        case ActionType.UpdateRecord:
-                            // Удаление попап апплета из информации о представлении
-                            viewInfo.RemovePopupApplet(context);
-                            break;
                     }
-                }
-            }
+                    else
+                    {
+                        SetSelectedRecord(busComp.Name, dataEntitiesId.ElementAtOrDefault(viewItem.AutofocusRecord));
+                        ComponentsContext<TBusinessComponent>.SetComponentContext(busComp.Name, defaultRecord);
+                    }
+                    break;
 
-            // В зависимости от действия, произошедшего в представлении
-            TBusinessComponent defaultRecord;
-            if (dataEntities.Count > 0)
-                defaultRecord = dataBUSFactory.DataToBusiness(dataEntities.ElementAtOrDefault(viewItem.AutofocusRecord), context);
-            else defaultRecord = new TBusinessComponent();
-            switch (viewInfo.ActionType)
-            {
                 case ActionType.InitializeView:
                     /* Промотка до текущей отоброжаемой записи
                      * Проверяется, что в список с текущими отображаемыми записями не пуст
@@ -361,8 +342,6 @@ namespace GSCrmLibrary.Controllers.ApiControllers.MainControllers
 
                 case ActionType.NewRecord:
                 case ActionType.ShowPopup:
-                case ActionType.NextRecords:
-                case ActionType.PreviousRecords:
                 case ActionType.SelectTileItem:
                     if (viewInfo.CurrentApplet?.Name != appletName)
                     {
