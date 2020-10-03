@@ -1,0 +1,49 @@
+﻿@inject ResManager resManager
+@using static GSCrm.CommonConsts
+@model QuotesViewModel
+
+@* // Модальное окно создания сделки *@
+<div id="quoteCreateModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" asp-controller="@QUOTE" asp-action="Create">
+                <div class="modal-header">
+                    <h5 class="modal-title">@resManager.GetString("NewQuote")</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="mt-3">
+                            <input id="amountName" class="form-control form-control-number" type="number" placeholder="@resManager.GetString("Amount")" />
+                            <ul id="amountNameError" class="d-none under-field-error label-sm mt-2"></ul>
+                        </div>
+                        <div class="mt-3">
+                            <input id="quoteAccountId" hidden="hidden" />
+                            <div id="quoteAccount" class="autocomplete default-autocomplete" data-autocomplite-type="Quotes" data-autocomplite-name="QuoteAccount">
+                                <a class="autocomplete-link" hidden="hidden" href="@Url.Content($"~/{ORGANIZATION}/GetAccounts/")"></a>
+                                <input class="autocomplete-input form-control" placeholder="@resManager.GetString(ACCOUNT)" />
+                                <ul class="autocomplete-result-list"></ul>
+                            </div>
+                        </div>
+                        <ul id="quoteAccountError" class="d-none under-field-error label-sm mt-2"></ul>
+                        <div class="mt-3">
+                            <input id="quoteManagerId" hidden="hidden" />
+                            <div id="quoteManager" class="autocomplete default-autocomplete" data-autocomplite-type="Quotes" data-autocomplite-name="QuoteManager">
+                                <a class="autocomplete-link" hidden="hidden" href="@Url.Content($"~/{ACCOUNT}/GetManagers/")"></a>
+                                <input class="autocomplete-input form-control" placeholder="@resManager.GetString("AccountManager")" />
+                                <ul class="autocomplete-result-list"></ul>
+                            </div>
+                        </div>
+                        <ul id="quoteManagerError" class="d-none under-field-error label-sm mt-2"></ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input id="createQuoteBtn" type="button" class="btn btn-primary" value="@resManager.GetString("CreateLabel")" />
+                    <input id="cancelCreationQuoteBtn" type="button" class="btn btn-secondary" data-dismiss="modal" value="@resManager.GetString("CancelLabel")" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

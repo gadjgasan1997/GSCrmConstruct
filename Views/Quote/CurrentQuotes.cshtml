@@ -1,0 +1,13 @@
+﻿@using GSCrm.Models.ViewModels
+@using GSCrm.Data.ApplicationInfo
+@using static GSCrm.CommonConsts
+@inject ResManager resManager
+@inject IViewsInfo viewsInfo
+@model QuotesViewModel
+@{
+    ViewInfo currentQuotesView = viewsInfo.Get(CURRENT_QUOTES);
+}
+<div class="tab-pane fade" id="currentQuotes" role="tabpanel" aria-labelledby="currentQuotesTab">
+    @* // Фильтр по сделкам *@
+    @{ await Html.RenderPartialAsync($"{QT_VIEWS_REL_PATH}Partial/CurrentQuotesFilter.cshtml"); }
+</div>

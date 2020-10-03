@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "_Layout";
+}
+@using GSCrm.Data.ApplicationInfo
+@using GSCrm.Models.ViewModels
+@using static GSCrm.CommonConsts
+@inject ResManager resManager
+@inject IViewsInfo viewsInfo
+@model QuotesViewModel
+@{
+    ViewInfo currentQuotesView = viewsInfo.Get(CURRENT_QUOTES);
+    ViewInfo allQuotesView = viewsInfo.Get(ALL_QUOTES);
+    IEnumerable<QuoteViewModel> quotes = Model.AllQuotes;
+}
+@* // Хлебные крошки *@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">@resManager.GetString("Home")</a></li>
+        <li class="breadcrumb-item active" aria-current="page">@resManager.GetString(QUOTES)</li>
+    </ol>
+</nav>
+
+<div id="quotesForm" class="container mt-3">
+    <div class="form-shadow d-none"></div>
+
+    @* // Модальное окно добавления сделки *@
+    @{ await Html.RenderPartialAsync($"{QT_VIEWS_REL_PATH}Partial/QuoteCreateModal.cshtml"); }
+
+    <div class="row nav-connected-tabs justify-content-end" nav-tabs="quoteTabs">
+        <div class="fade show nav-connected-tab" nav-tab="#currentQuotes">
+            <input type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#quoteCreateModal" value="@resManager.GetString("CreateQuote")" />
+        </div>
+        <div class="fade nav-connected-tab" nav-tab="#allQuotes">
+
+        </div>
+    </div>
+
+    @* // Вкладки *@
+    <ul id="quoteTabs" class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link" id="currentQuotesTab" data-toggle="tab" href="#currentQuotes" role="tab" aria-controls="currentQuotes" aria-selected="false">@resManager.GetString("OrganizationQuotes") @Model.PrimaryOrganizationName</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="allQuotesTab" data-toggle="tab" href="#allQuotes" role="tab" aria-controls="allQuotes" aria-selected="false">@resManager.GetString("AllQuotes")</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        @* // Контакты *@
+        @{ await Html.RenderPartialAsync($"{QT_VIEWS_REL_PATH}CurrentQuotes.cshtml"); }
+
+        @* // Должности *@
+        @{ await Html.RenderPartialAsync($"{QT_VIEWS_REL_PATH}AllQuotes.cshtml"); }
+    </div>
+</div>
